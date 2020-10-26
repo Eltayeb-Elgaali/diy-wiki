@@ -47,7 +47,6 @@ It is a way to develop a fullstack web app using node.js and react.
 
 ### Running the API
 
-
 __Installing Dependencies__
 
 1. `npm install`
@@ -58,14 +57,9 @@ __Running the API__
 2. Open Postman
 3. Explore `localhost:xxxx`!
 
-
 ### Running the Frontend
 
 __Installing Dependencies__
-
-1. `npm install`
-
-__Running the Frontend__
 
 1. `npm run start`
 2. It will automatically open a new tab in your browser
@@ -76,7 +70,6 @@ __Running the Frontend__
 Examples of usage:
 
    `to be added later`
-
 
 ## Features
 
