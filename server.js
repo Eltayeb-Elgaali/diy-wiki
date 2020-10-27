@@ -66,9 +66,10 @@ app.get('/api/page/:slug', async (req, res) => {
 app.post('/api/page/:slug', async (req, res) => {
   const filename = slugToPath(req.params.slug);
   try {
-
+    await writeFile(filename, req.body.body);
+    res.json({status: 'ok'})
   } catch (e) {
-
+    res.json({ status: 'error', message: 'Page does not exist'})
   }
 });
 
