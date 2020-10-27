@@ -80,7 +80,11 @@ app.post('/api/page/:slug', async (req, res) => {
 //  success response: {status:'ok', pages: ['fileName', 'otherFileName']}
 //  failure response: no failure response
 app.get('/api/pages/all', async (req, res) => {
-
+  const pagesWithExt = await readDir(__dirname +'/'+ DATA_DIR)
+ const pages = pagesWithExt.map((filename) => {
+   return path.parse(filename).name
+ })
+  res.json({status: 'ok', pages})
 });
 
 
