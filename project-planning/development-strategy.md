@@ -37,6 +37,7 @@
 
 ### REPO
 
+- This user story has been written by Coaches.
 - This user story is developed on branch `get-page`.
 - This branch is merged to `master` branch after completion.
 
