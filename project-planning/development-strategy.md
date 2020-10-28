@@ -111,7 +111,7 @@
 
 ### REPO
 
-- This user story is developed on branch `get-page-by-tag`.
+- This user story is developed on branch `get-pages-by-tag`.
 - This branch is merged to `master` branch after completion.
 
 ### Node.js
