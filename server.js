@@ -122,6 +122,22 @@ app.get('/api/tags/all', async (req, res) => {
 //  success response: {status:'ok', tag: 'tagName', pages: ['tagName', 'otherTagName']}
 //  failure response: no failure response
 app.get('/api/tags/:tag', async (req, res) => {
+  let pages = [];
+  try {
+    const pagesWithExt = await readDir(`${__dirname}/${DATA_DIR}`);
+    for (const page of pagesWithExt){
+      const filename = `${DATA_DIR}/${page}`;
+      const fileContent = await readFile(filename, 'utf-8');
+      if(fileContent.includes(`#${req.params.tag}`)) {
+        const pageWithoutExt = path.parse(page).name;
+        pages.push(pageWithoutExt);
+      }
+
+    }
+    res.json({status: 'ok', tag: req.params.tag, pages})
+  } catch(e) {
+    console.error(e)
+  }
 
 });
 
